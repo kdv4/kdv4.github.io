@@ -1,3 +1,4 @@
+/* Global Styles */
 * {
     margin: 0;
     padding: 0;
@@ -5,15 +6,16 @@
 }
 
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Helvetica Neue', sans-serif;
     line-height: 1.6;
-    background-color: #f0f0f0;
+    background-color: #f4f4f9;
+    color: #333;
 }
 
+/* Header */
 header {
-    background-color: #ff6f61;
+    background-color: #333;
     padding: 15px 0;
-    text-align: center;
 }
 
 nav {
@@ -26,8 +28,10 @@ nav {
 }
 
 nav .logo {
-    font-size: 1.8rem;
+    font-size: 2rem;
     color: white;
+    font-weight: bold;
+    letter-spacing: 1.5px;
 }
 
 nav ul {
@@ -36,15 +40,21 @@ nav ul {
 
 nav ul li {
     display: inline;
-    margin-right: 20px;
+    margin-right: 25px;
 }
 
 nav ul li a {
     color: white;
     text-decoration: none;
     font-size: 1.1rem;
+    transition: color 0.3s ease-in-out;
 }
 
+nav ul li a:hover {
+    color: #ff6f61;
+}
+
+/* Hero Section */
 .hero {
     background-image: url('images/wedding-hero.jpg');
     background-size: cover;
@@ -53,51 +63,164 @@ nav ul li a {
     display: flex;
     align-items: center;
     justify-content: center;
-    text-align: center;
     color: white;
+    position: relative;
+}
+
+.hero::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
 .hero-text {
-    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+    text-align: center;
     padding: 20px;
+    max-width: 800px;
+}
+
+.hero-text h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.hero-text p {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+    line-height: 1.8;
 }
 
 .cta-button {
     background-color: #ff6f61;
     color: white;
-    padding: 10px 20px;
-    text-decoration: none;
-    border-radius: 5px;
+    padding: 15px 30px;
     font-size: 1.2rem;
+    text-decoration: none;
+    border-radius: 50px;
+    transition: background-color 0.3s ease-in-out;
 }
 
+.cta-button:hover {
+    background-color: #ff3f3f;
+}
+
+/* Services Section */
 .services {
-    padding: 50px 0;
+    padding: 60px 0;
     background-color: white;
     text-align: center;
+}
+
+.services h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: #ff6f61;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
 }
 
 .service-container {
     display: flex;
     justify-content: space-around;
-    margin: 20px 0;
+    flex-wrap: wrap;
 }
 
 .service {
     width: 30%;
+    background-color: #f8f8f8;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.service:hover {
+    transform: translateY(-10px);
 }
 
 .service img {
     width: 100%;
+    height: auto;
     border-radius: 10px;
+    margin-bottom: 15px;
 }
 
+.service h3 {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.service p {
+    font-size: 1rem;
+    color: #555;
+}
+
+/* Footer */
 footer {
     background-color: #333;
     color: white;
     padding: 20px;
     text-align: center;
-    position: relative;
-    bottom: 0;
-    width: 100%;
+    font-size: 0.9rem;
+}
+
+footer a {
+    color: #ff6f61;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Privacy Policy Section */
+.policy {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.policy h1, .policy h2 {
+    color: #333;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+.policy p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+    .service-container {
+        flex-direction: column;
+    }
+    
+    .service {
+        width: 90%;
+        margin: 20px auto;
+    }
+    
+    .hero-text h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-text p {
+        font-size: 1.2rem;
+    }
 }
